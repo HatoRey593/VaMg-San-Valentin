@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín? ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #d6336c;
+            margin-top: 30px;
+            font-size: 2.5em;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 22px;
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+
+        #yesBtn {
+            background-color: #ff477e;
+            color: white;
+            font-weight: bold;
+        }
+
+        #noBtn {
+            background-color: #ff4d4d;
+            color: white;
+            font-weight: bold;
+        }
+
+        #message {
+            font-size: 22px;
+            color: #ff0055;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>💌 Un mensaje para ti 💌</h1>
+    <p>
+        "Holaaa Mi cielo, sé que estamos pasando por un momento medio complicado, pero quiero que eso no sea razón para dejar de celebrar un día tan especial como San Valentín. Porque a pesar de los retos, seguimos aquí, más fuertes que nunca, demostrando que nuestro amor puede con todo. Quiero que el mundo vea que, aunque la vida nos ponga obtáculos, seguimos eligiéndonos cada día, con todo el amor que tenemos para dar y recibir. ❤️"
+    </p>
+
+    <h1>¿Quieres ser mi San Valentín? 💖</h1>
+
+    <div class="container">
+        <div class="buttons">
+            <button id="yesBtn">Sí 😍</button>
+            <button id="noBtn">No 😢</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        let noBtn = document.getElementById('noBtn');
+        let yesBtn = document.getElementById('yesBtn');
+        let message = document.getElementById('message');
+        let clickCount = 0;
+
+        const frases = [
+            "¿Segura? No hay nadie como yo jiji💕😏",
+            "Piensa en todos los momentos bonitos que podríamos tener 🥰💫",
+            "Voy a estar muy triste si dices que no 😔💔",
+          "Si me dices que sí hay una noche de pasión jaja noo mentiraa 😂 pero di si",
+            "No te preocupes, yo te voy a consentir mucho, di que sí. 💖🍫",
+            "¡Prometo que será el mejor San Valentín de tu vida! 😍🌹",
+            "Te haré reír todos los días si dices que sí 😂",
+          "Quiero llorar pipipi, ándale di que siiiii 😔💔",
+            "Ya tengo todo planeado, solo falta tu respuesta ❤️🎟️",
+            "Seremos la pareja más bonita del mundo 🌍💑",
+            "¡Vamos, di que sí, no te arrepentirás! 🙌",
+            "Si dices que sí, te debo un regalo sorpresa 🎁😉",
+            "No te hagas, sé que en el fondo quieres decir que sí 💖🙃",
+            "Si dices que sí, te haré cosquillas hasta que rías y te hagas pis 😆",
+          "Si significa sí, y No, significa sí jsjaj",
+          "Te extraño mucho :c pero dime que si porfa",
+            "No sé qué haré si dices que no... ¡me quedaré triste para siempre pipipi! 😭",
+            "Dale, no seas mala, solo di que sí y hacemos algo bonito juntos 💕✨",
+            "Si dices que sí, te prometo muchos abrazos y apapachos pofi.. 🥰🤗",
+          "Que dices? andale, porfi porfi porfi di que si niña pinky"
+        ];
+
+        noBtn.addEventListener('click', function() {
+            if (clickCount < frases.length) {
+                message.innerHTML = frases[clickCount];
+
+                // Hacer crecer el botón "Sí" cada vez más
+                let currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
+                yesBtn.style.fontSize = (currentSize + 5) + "px";
+
+                clickCount++;
+            } else {
+                message.innerHTML = "¡Ya mejor di que sí pofavo! que estoy muy triste :c, pofi siiiiii? )";
+            }
+        });
+
+        yesBtn.addEventListener('click', function() {
+            message.innerHTML = ' Sabía que ibas a decir que sí jsjaja ¡Gracias, Te Amo Mucho, Mi Vale ❤️!';
+            yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
+        });
+
+    </script>
+
+</body>
+</html>
